@@ -1,0 +1,236 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+body {
+  background-color: var(--light-grayish-cyan);
+  position: relative;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-grayish-cyan);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  font-size: 24px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+/* input container  */
+.input-container {
+  font-size: 20px;
+}
+.billAmount-input {
+  width: 100%;
+  background-image: url(./images/icon-dollar.svg);
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 10px 25px;
+  background-position: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+}
+.billAmount-input:focus {
+  outline: 2px solid var(--strong-cyan);
+}
+.tip-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.tip-container > .tips {
+  padding: 5px;
+  font-size: 25px;
+  background-color: var(--very-dark-cyan);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+}
+.tip-container > .tips:hover {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.tip-container > input {
+  background-color: var(--very-dark-cyan);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+.tip-container > .active-tip {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.tip-custom {
+  padding: 5px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+}
+.tip-custom:focus {
+  outline: 2px solid var(--strong-cyan);
+}
+
+.people-input {
+  width: 100%;
+  background-image: url(./images/icon-person.svg);
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: var(--very-light-grayish-cyan);
+  padding: 10px 25px;
+  background-position: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+}
+.people-input:focus {
+  outline: 2px solid var(--strong-cyan);
+}
+.error {
+  display: none;
+}
+/* amount container  */
+.amout-container {
+  background-color: var(--very-dark-cyan);
+  padding: 25px 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tip-amount-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--strong-cyan);
+}
+.tip-amount-text {
+  display: flex;
+  flex-direction: column;
+}
+.tip-amount-text > span:first-child {
+  font-weight: 700;
+  color: white;
+}
+.tip-amount-text > span:last-child {
+  color: var(--grayish-cyan);
+  font-size: 15px;
+}
+.total-amount-text-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--strong-cyan);
+}
+.total-amount-text {
+  display: flex;
+  flex-direction: column;
+}
+.total-amount-text > span:first-child {
+  font-weight: 700;
+  color: white;
+}
+.total-amount-text > span:last-child {
+  color: var(--grayish-cyan);
+  font-size: 15px;
+}
+.reset-btn {
+  align-items: center;
+  width: 100%;
+  font-size: 24px;
+  border: none;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* attribution */
+.attribution {
+  position: absolute;
+  bottom: 0;
+  font-size: 11px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    height: 100vh;
+    margin-top: -50px;
+  }
+  .container {
+    flex-direction: row;
+    width: 700px;
+  }
+  .input-container {
+    width: 300px;
+  }
+  .amout-container {
+    width: 350px;
+  }
+  .attribution {
+    font-size: 15px;
+  }
+}
+
+/* Remove the default number input spinner  */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
