@@ -11,6 +11,10 @@ const currencies = document.querySelector(".currencies");
 const languages = document.querySelector(".languages");
 const borderCountries=document.querySelector('.border-countries');
 
+const themeChanger =document.querySelector('.theme-changer');
+const themeChangerText=document.querySelector('.theme-changer-text');
+const icon=document.querySelector('.theme-changer i')
+
 fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
   .then((res) => res.json())
   .then(([country]) => {
@@ -60,3 +64,11 @@ fetch(`https://restcountries.com/v3.1/name/${countryName}?fullText=true`)
       })
     }
   });
+
+  themeChanger.addEventListener('click',()=>{
+    document.body.classList.toggle('dark');
+    themeChangerText.innerText=(themeChangerText.innerText === 'Light Mode') ? 'Dark Mode' : 'Light Mode';
+    icon.classList.toggle('fa-moon');
+    icon.classList.toggle('fa-sun');
+  
+  })

@@ -2,7 +2,9 @@ const countriesContainer = document.querySelector(".countries-container");
 const filterByRegion = document.querySelector(".filter-by-region");
 const searchInput = document.querySelector(".search-container input");
 
-let allCountriesData;
+const themeChanger =document.querySelector('.theme-changer');
+const themeChangerText=document.querySelector('.theme-changer-text');
+const icon=document.querySelector('.theme-changer i')
 // fetch data
 fetch("https://restcountries.com/v3.1/all")
   .then((res) => res.json())
@@ -45,6 +47,15 @@ searchInput.addEventListener("input", (e) => {
   // console.log(filteredCountries);
   renderCountries(filteredCountries);
 });
+
+themeChanger.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  themeChangerText.innerText=(themeChangerText.innerText === 'Light Mode') ? 'Dark Mode' : 'Light Mode';
+  icon.classList.toggle('fa-moon');
+  icon.classList.toggle('fa-sun');
+
+})
+
 
 // const countryCard = document.createElement('a');
 // countryCard.classList.add("country-card")
