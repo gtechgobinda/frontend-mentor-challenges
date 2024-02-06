@@ -37,11 +37,11 @@ function App() {
             <p className="advice-quote">"{advice}"</p>
 
             <img className="divider-m" src={patternDividerM} alt="divider" />
-            <img className="divider-d"src={patternDividerD} alt="divider" />
+            <img className="divider-d" src={patternDividerD} alt="divider" />
           </div>
 
           <div className="dise-container" onClick={handleDiseThrow}>
-            <img src={iconDice} alt="" />
+            <img src={iconDice} alt="dise" />
           </div>
         </div>
       </div>
